@@ -31,7 +31,7 @@ namespace WebAppSql.Controllers
             return View();
         }
 
-        public IActionResult RelevéCDRB()
+        public IActionResult RelevCDRB()
         {
             return View();
         }
