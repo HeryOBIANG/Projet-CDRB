@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - WebAppSql</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/WebAppSql.styles.css" asp-append-version="true" />
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container-fluid">
+				<a class="navbar-brand d-flex align-items-center text-black text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">
+					<!-- Logo Image -->
+					<img src="~/image/Logo.jpg" alt="CDRB Logo" class="logo" style="height: 50px; width: auto; margin-right: 10px;" />
+					<!-- Title Next to the Logo -->
+					<h6 class="mb-0">Caisse de Dépôt et de Règlement<br /> du Barreau</h6>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Accueil</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Annuaire</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Actualité</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Liens Utiles</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Partenaires</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Aide</a>
+						</li>
+					</ul>
+					<partial name="_LoginPartial" />
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="sidebar bg-light py-4 px-3">
+					<h4>Présentation</h4>
+					<ul class="list-unstyled">
+						<li><a asp-area="" asp-controller="Home" asp-action="Barreau">Le Barreau</a></li>
+						<li><a href="@Url.Action("Index", "CDRB")">Compte CDRB</a></li>
+					</ul>
+					<h4>Administration</h4>
+					<ul class="list-unstyled">
+						<li><a href="@Url.Action("Index", "Section1")">Nouveau Profil</a></li>
+						<li><a href="@Url.Action("Index", "Section2")">Affection de Profil</a></li>
+					</ul>
+					<h4>Gestion des Comptes</h4>
+					<ul class="list-unstyled">
+						<li><a href="@Url.Action("Index", "Section1")">Compte Avocat</a></li>
+						<li><a href="@Url.Action("Index", "Section2")">Sous-Compte Affaire</a></li>
+					</ul>
+					<h4>Suivi et Reporting</h4>
+					<ul class="list-unstyled">
+						<li><a href="@Url.Action("Index", "Section1")">Etats de Dépôt et de retrait</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="RelevéCDRB">Relevé de Compte CDRB</a></li>
+						<li><a href="@Url.Action("Index", "Section2")">Operation non identifiées</a></li>
+					</ul>
+					<h4>Téléchargement</h4>
+					<ul class="list-unstyled">
+						<li><a href="@Url.Action("Index", "Section1")">Bondereau de Dépôt</a></li>
+						<li><a href="@Url.Action("Index", "Section2")">Bondereau de Retrait</a></li>
+						<li><a href="@Url.Action("Index", "Section2")">Bondereau de Liquidation</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-8 py-4">
+				<main role="main" class="pb-3 col-md-8">
+					@RenderBody()
+				</main>
+			</div>
+		</div>
+	</div>
+
+
+			<footer class="border-top footer text-muted">
+		
+		<div class="container text-md-center">
+			<a asp-area="" asp-controller="Home" asp-action="Index">
+				<!-- Logo Image -->
+				<img src="~/image/Logo.jpg" alt="CDRB Logo" class="logo" style="height: 50px; width: auto; margin-right: 10px;" />
+			</a>
+			CDRB&2024Caisse de Dépôt et de Règlement de Barreau <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+		</div>
+			</footer>
+			<script src="~/lib/jquery/dist/jquery.min.js"></script>
+			<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+			<script src="~/js/site.js" asp-append-version="true"></script>
+			@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
